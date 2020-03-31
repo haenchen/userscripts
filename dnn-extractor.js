@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         DNN Extractor
 // @namespace    https://fabian-haenchen.de
-// @version      0.1
+// @version      0.2
 // @description  Extract hidden content
 // @author       haenchen
 // @match        https://www.dnn.de/*
+// @match        https://m.dnn.de/*
 // ==/UserScript==
 (function () {
   'use strict';
@@ -13,10 +14,11 @@
     if (element.getAttribute('type') !== 'application/ld+json') {
       continue;
     }
-    var json = JSON.parse(element.innerHTML);
-    if (json['@type'] !== 'NewsArticle') {
+    if (!element.innerText.includes("articleBody")) {
       continue;
     }
+    var text = element.innerText;
+    var json = window.JSON.parse(text.substring(1, text.length -1));
     var div = document.getElementsByClassName('pdb-article-body')[0];
     div.innerHTML = '';
     var content = document.createElement('div');
