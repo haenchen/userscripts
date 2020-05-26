@@ -7,7 +7,7 @@
 // @match        https://www.dnn.de/*
 // @match        https://m.dnn.de/*
 // @match        https://www.haz.de/*
-/) @match        https://m.haz.de/*
+// @match        https://m.haz.de/*
 // ==/UserScript==
 (function () {
   'use strict';
