@@ -1,13 +1,21 @@
 // ==UserScript==
 // @name         DNN Extractor
 // @namespace    https://fabian-haenchen.de
-// @version      0.3
+// @version      0.4
 // @description  Extract hidden content
 // @author       haenchen
 // @match        https://www.dnn.de/*
 // @match        https://m.dnn.de/*
 // @match        https://www.haz.de/*
 // @match        https://m.haz.de/*
+// @match        https://www.neuepresse.de/*
+// @match        https://m.neuepresse.de/*
+// @match        https://www.lvz.de/*
+// @match        https://m.lvz.de/*
+// @match        https://www.maz-online.de/*
+// @match        https://m.maz-online.de/*
+// @match        https://www.ln-online.de/*
+// @match        https://m.ln-online.de/*
 // ==/UserScript==
 (function () {
   'use strict';
