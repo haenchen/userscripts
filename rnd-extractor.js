@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         DNN Extractor
+// @name         RND Extractor
 // @namespace    https://fabian-haenchen.de
 // @version      0.4
 // @description  Extract hidden content
