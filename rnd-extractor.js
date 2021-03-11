@@ -2,7 +2,7 @@
 // @name         RND Extractor
 // @namespace    https://fabian-haenchen.de
 // @version      0.4
-// @description  Extract hidden content
+// @description  Extract hidden content from news sites belonging to the Redationsnetwerk Deutschland
 // @author       haenchen
 // @match        https://www.dnn.de/*
 // @match        https://m.dnn.de/*
@@ -16,6 +16,9 @@
 // @match        https://m.maz-online.de/*
 // @match        https://www.ln-online.de/*
 // @match        https://m.ln-online.de/*
+// @downloadURL  https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.js
+// @updateURL    https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.js
+// @grant        none
 // ==/UserScript==
 (function () {
   'use strict';
