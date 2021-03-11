@@ -20,6 +20,7 @@
 // @updateURL    https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.js
 // @grant        none
 // ==/UserScript==
+
 (function () {
   'use strict';
   var scripts = document.getElementsByTagName('script');
