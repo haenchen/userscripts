@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RND Extractor
 // @namespace    https://fabian-haenchen.de
-// @version      0.4
+// @version      0.5
 // @description  Extract hidden content from news sites belonging to the Redationsnetwerk Deutschland
 // @author       haenchen
 // @match        https://www.dnn.de/*
@@ -20,6 +20,12 @@
 // @updateURL    https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.js
 // @grant        none
 // ==/UserScript==
+
+if (!String.prototype.splice) {
+    String.prototype.splice = function(start, delCount, newSubStr) {
+        return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
+    };
+}
 
 (function () {
   'use strict';
@@ -40,7 +46,28 @@
     div.innerHTML = '';
     var content = document.createElement('div');
     content.classList.add('pdb-richtext-field');
-    content.innerHTML = json.articleBody;
+    var article = json.articleBody;
+
+    // This is experimental and may be horrible
+    var index = article.indexOf('Liveticker:') + 'Liveticker:'.length;
+    var trueindex = index;
+    if (index) {
+      var remain = article.substr(index);
+      while ((index = remain.search(/(\d{1,2}\.){2}(\d{2}|\d{4})\s(\d+:\d+)/)) != -1) {
+        trueindex += index;
+        article = article.splice(trueindex, 0, '<br><br>');
+
+        // No need to include the same date (min length: 14 chars) and <br><br> again
+        trueindex += 22;
+        if (trueindex > article.length) {
+          break;
+        }
+        remain = article.substr(trueindex);
+      }
+    }
+
+    content.innerHTML = article;
     div.appendChild(content);
+    div.setAttribute('style', 'text-align: justify !important; line-height: 2;');
   }
 })();
