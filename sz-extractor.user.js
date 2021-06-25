@@ -15,6 +15,7 @@
 (function() {
     'use strict';
 
+    /* Cheeky Sächsische Zeitung adds this cheeky class a while after page load */
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         if (mutation.attributeName === "class") {
