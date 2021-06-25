@@ -16,8 +16,8 @@
 // @match        https://m.maz-online.de/*
 // @match        https://www.ln-online.de/*
 // @match        https://m.ln-online.de/*
-// @downloadURL  https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.js
-// @updateURL    https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.js
+// @downloadURL  https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.user.js
+// @updateURL    https://raw.githubusercontent.com/haenchen/userscripts/master/rnd-extractor.user.js
 // @grant        none
 // ==/UserScript==
 
